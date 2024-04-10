@@ -13,13 +13,13 @@ public class UserController {
         return "add";
     }
 
-    @ExceptionHandler(value={java.lang.ArithmeticException.class})
+    /*@ExceptionHandler(value={java.lang.ArithmeticException.class})
     public ModelAndView handlerArithmeticException(Exception e) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("exception", e.toString());
         modelAndView.setViewName("mathError");
         return modelAndView;
-    }
+    }*/
 
     @RequestMapping("/update")
     public String update() {
@@ -28,11 +28,11 @@ public class UserController {
         return "update";
     }
 
-    @ExceptionHandler(value={java.lang.NullPointerException.class})
+    /*@ExceptionHandler(value={java.lang.NullPointerException.class})
     public ModelAndView handlerNullPointerException(Exception e) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("exception", e.toString());
         modelAndView.setViewName("nullPointerError");
         return modelAndView;
-    }
+    }*/
 }
