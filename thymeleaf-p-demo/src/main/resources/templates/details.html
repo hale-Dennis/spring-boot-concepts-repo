@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3 th:if="${testUser.getGrade()} < 50"> You failed the exam</h3>
+    <h3 th:if="${testUser.getGrade()} > 50"> You passed the exam</h3>
+    <div th:switch="${testUser.getGPA()">
+        <p th:case="A">You are an excellent student</p>
+        <p th:case="B">You are a good student</p>
+        <p th:case="C">You are an okay student</p>
+        <p th:case="D">You need to improve</p>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>GPA</th>
+            <th>GRADE</th>
+            <th>NAME</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getGPA()}"></td>
+            <td th:text="${user.getGrade()}"></td>
+            <td th:text="${user.getName()}"></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
